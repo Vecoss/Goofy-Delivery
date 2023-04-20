@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float backSpeed = 1;
+    [SerializeField] private float backSpeed = 10;
     [SerializeField] private float rotationSpeed = 0.1f;
     [SerializeField] private float drag = 1;
     [SerializeField] private float breakForce = 2;
@@ -17,8 +17,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        
+        rb = GetComponent<Rigidbody>(); 
     }
 
 
@@ -27,30 +26,34 @@ public class Movement : MonoBehaviour
        
         Brake();
         
-        if (Input.GetKey(KeyCode.W) && !isInBuilding && speed <= maxSpeed)
+        if (Input.GetKey(KeyCode.W) && !isInBuilding && rb.velocity.magnitude <= maxSpeed)
         {
             rb.AddForce(transform.forward * speed, ForceMode.Acceleration);
             drag = rb.drag;
             
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && !isInBuilding && rb.velocity.magnitude <= maxSpeed)
         {
             rb.AddForce(-transform.forward * backSpeed);
             drag = rb.drag;
 
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D) && !isInBuilding && speed <= maxSpeed || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+        if (((Input.GetKey(KeyCode.W) && !isInBuilding) || Input.GetKey(KeyCode.S)) && Input.GetKey(KeyCode.D) && rb.angularVelocity.magnitude <= 1)
         {
+
+            
             yRotation += rotationSpeed * Time.deltaTime;
             yRotation = Mathf.Clamp(yRotation, 0f, 90);
-            transform.Rotate (0, yRotation, 0);
+            Quaternion deltarotation = Quaternion.Euler(0f, yRotation * Time.deltaTime, 0f);
+            rb.MoveRotation(rb.rotation * deltarotation);
         }
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A) && !isInBuilding && speed <= maxSpeed || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+        if (((Input.GetKey(KeyCode.W) && !isInBuilding) || Input.GetKey(KeyCode.S)) && Input.GetKey(KeyCode.A) && rb.angularVelocity.magnitude <= 1)
         {
 
             yRotation += rotationSpeed * Time.deltaTime;
             yRotation = Mathf.Clamp(yRotation, 0f, 90);
-            transform.Rotate(0, -yRotation, 0);
+            Quaternion deltarotation = Quaternion.Euler(0f, -yRotation * Time.deltaTime, 0f);
+            rb.MoveRotation(rb.rotation * deltarotation);
         }
 
     }
@@ -62,22 +65,44 @@ public class Movement : MonoBehaviour
             drag *= breakForce;           
         }
     }
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter(Collider other) 
     {
         if (gameObject.tag == "Building")
         {
+            Debug.Log("1");
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.Sleep();
             isInBuilding = true;
+
         }
     }
-    private void OnCollisionExit(Collision collision)
+   /* private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Building")
+
+        if (gameObject.tag == "Building")
         {
             isInBuilding = false;
         }
-    }
+    }*/
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (gameObject.tag == "Building")
+    //    {
+    //        Debug.Log("1");
+    //        Rigidbody rb = GetComponent<Rigidbody>();
+    //        rb.Sleep();
+    //        isInBuilding = true;
+
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (gameObject.tag == "Building")
+    //    {
+    //        isInBuilding = false;
+    //    }
+    //}
 
 }
 
