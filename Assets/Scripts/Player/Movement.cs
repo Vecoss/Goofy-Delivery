@@ -5,10 +5,10 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 2.5f;
+    [SerializeField] private float speed = 10f;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float backSpeed = 10;
-    [SerializeField] private float rotationSpeed = 0.1f;
+    [SerializeField] private float backSpeed = 3;
+    [SerializeField] private float rotationSpeed = 50f;
     [SerializeField] private float drag = 1;
     [SerializeField] private float breakForce = 2;
     private bool isInBuilding = false;
