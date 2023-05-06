@@ -4,38 +4,41 @@ using UnityEngine;
 
 public class CameraChange : MonoBehaviour
 {
-    [SerializeField] public Transform target;
-    private bool isFPC = false;
+    [SerializeField] private Transform FPCPoint;
+    [SerializeField] private Transform TPCPoint;
+    private bool isFPC = true;
 
     private void Awake()
     {
-        FPC();
+        CamerChange();
 
     }
 
     void Update()
     {
-        FPC();
-        TPC();
-    }
-
-    private void FPC()
-    {
-        if (Input.GetKeyDown(KeyCode.C) && !isFPC)
-        {
-            gameObject.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
-            gameObject.transform.rotation = Quaternion.Euler(target.transform.rotation.x, target.transform.rotation.y, target.transform.rotation.z);
-            isFPC = true;
-        }
-    }
-
-    private void TPC()
-    {
         if (Input.GetKeyDown(KeyCode.C) && isFPC)
         {
-            gameObject.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 2f, target.transform.position.z - 3.5f);
-            gameObject.transform.rotation = Quaternion.Euler(target.transform.rotation.x + 15, target.transform.rotation.y, target.transform.rotation.z);
             isFPC = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.C) && !isFPC)
+        {
+            isFPC = true;
+        }
+        CamerChange();
+    }
+
+
+    private void CamerChange()
+    {
+        if (isFPC)
+        {
+            gameObject.transform.position = new Vector3(FPCPoint.transform.position.x, FPCPoint.transform.position.y, FPCPoint.transform.position.z);
+            gameObject.transform.rotation = Quaternion.Euler(FPCPoint.transform.rotation.x, FPCPoint.transform.rotation.y, FPCPoint.transform.rotation.z);
+        }
+        else
+        {
+            gameObject.transform.position = new Vector3(TPCPoint.transform.position.x, TPCPoint.transform.position.y, TPCPoint.transform.position.z);
+            gameObject.transform.rotation = Quaternion.Euler(TPCPoint.transform.rotation.x + 20, TPCPoint.transform.rotation.y, TPCPoint.transform.rotation.z);
         }
     }
 }
