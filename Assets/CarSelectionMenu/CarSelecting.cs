@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CarSelecting : MonoBehaviour
 {
-    [SerializeField] List<GameObject> cars;
+    [SerializeField] public List<GameObject> cars;
     public int counter = 0;
 
     private void Awake()
@@ -68,8 +68,7 @@ public class CarSelecting : MonoBehaviour
 
     public void ConfirmSelection()
     {
-        //Przejœcie na scene mapy
-        //SceneManager.LoadScene("");   
+        SceneManager.LoadScene("MainScene");   
     }
 
     public void BackToMenu()
