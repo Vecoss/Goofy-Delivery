@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81fd34ebfd3ed345ad963f4c7e740bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  maxSpeed: 10
-  backSpeed: 3
+  speed: 40
+  maxSpeed: 40
+  backSpeed: 10
   rotationSpeed: 50
   drag: 1
   breakForce: 2
