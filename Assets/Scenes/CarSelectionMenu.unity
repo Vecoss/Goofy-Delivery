@@ -608,7 +608,7 @@ MonoBehaviour:
   - {fileID: 1552439207}
   - {fileID: 1364869685}
   - {fileID: 42722440}
-  counter: 0
+  car: {fileID: 11400000, guid: 9c157496f5eb46448b5f8a335011e709, type: 2}
 --- !u!4 &715044492
 Transform:
   m_ObjectHideFlags: 0
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEventToRaiseOnInteraction: {fileID: 11400000, guid: 1f573923e1793e648b58bc5ef7b7cf62,
     type: 2}
-  CarSelection: {fileID: 0}
+  CarSelection: {fileID: 11400000, guid: 9c157496f5eb46448b5f8a335011e709, type: 2}
 --- !u!1 &1613729919
 GameObject:
   m_ObjectHideFlags: 0

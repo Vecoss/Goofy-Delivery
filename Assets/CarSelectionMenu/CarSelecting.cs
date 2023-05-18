@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CarSelecting : MonoBehaviour
 {
     [SerializeField] public List<GameObject> cars;
-    public int counter = 0;
+    public CarSelection car;
 
     private void Awake()
     {
@@ -21,23 +21,23 @@ public class CarSelecting : MonoBehaviour
     public void NextCar()
     {
         Debug.Log("Do przodu");
-        if (counter >= cars.Count-1)
+        if (car.selectedCar >= cars.Count-1)
         {
-            counter = 0;
+            car.selectedCar = 0;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[counter].SetActive(true);
+            cars[car.selectedCar].SetActive(true);
         }
         else
         {
-            counter++;
+            car.selectedCar++;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[counter].SetActive(true);
+            cars[car.selectedCar].SetActive(true);
 
         }
     }
@@ -45,23 +45,23 @@ public class CarSelecting : MonoBehaviour
     public void PreviousCar()
     {
         Debug.Log("Wstecz");
-        if (counter <= 0)
+        if (car.selectedCar <= 0)
         {
-            counter = cars.Count-1;
+            car.selectedCar = cars.Count-1;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[counter].SetActive(true);
+            cars[car.selectedCar].SetActive(true);
         }
         else
         {
-            counter--;
+            car.selectedCar--;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[counter].SetActive(true);
+            cars[car.selectedCar].SetActive(true);
 
         }
     }
