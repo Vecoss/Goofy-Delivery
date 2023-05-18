@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10034,40 +10034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 77605824800861089, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: speed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 77605824800861089, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 2646987306585291108, guid: d95672e5753640147ba2594bfa3e0c95,
         type: 3}
       propertyPath: m_Name
       value: Car1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2726253401049099461, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: m_CameraType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261458572265311654, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261458572265311654, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0182
-      objectReference: {fileID: 0}
-    - target: {fileID: 8261458572265311654, guid: d95672e5753640147ba2594bfa3e0c95,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.0715
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95672e5753640147ba2594bfa3e0c95, type: 3}
@@ -29627,8 +29597,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1591795269}
-  - component: {fileID: 1591795268}
-  - component: {fileID: 1591795267}
   m_Layer: 0
   m_Name: Spawn Point
   m_TagString: Untagged
@@ -29636,47 +29604,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1591795267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591795266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEventToListen: {fileID: 11400000, guid: 1f573923e1793e648b58bc5ef7b7cf62, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1591795268}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1591795268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591795266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991da322c59da544ba9853266034f175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  car: {fileID: 0}
 --- !u!4 &1591795269
 Transform:
   m_ObjectHideFlags: 0

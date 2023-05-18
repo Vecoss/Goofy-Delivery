@@ -7,11 +7,15 @@ public class FallingIntoWater : MonoBehaviour
 {
     void Update()
     {
-        if(gameObject.transform.position.y < -5)
-        {
-            Destroy(gameObject);
+    }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 4)
+        {
             SceneManager.LoadScene("LoseScene");
+            Destroy(gameObject);
         }
     }
+
 }

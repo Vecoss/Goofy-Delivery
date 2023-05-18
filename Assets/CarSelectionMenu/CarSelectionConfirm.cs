@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarSelectionConfirm : MonoBehaviour
 {
-    public CarSelecting car;
+    public GameEvent gameEventToRaiseOnInteraction;
+    public CarSelection CarSelection;
 
-
-    private void Awake()
+    public void Confirm()
     {
-        Instantiate(car.cars[car.counter], gameObject.transform.position, Quaternion.identity);
+        gameEventToRaiseOnInteraction.Fire();
     }
 }
