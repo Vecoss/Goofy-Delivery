@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement : MonoBehaviour, IGameEventListener
 {
 
     [SerializeField] private float speed = 10f;
@@ -14,15 +14,22 @@ public class Movement : MonoBehaviour
     private bool isInBuilding = false;
     private float yRotation = 0f;
     private Rigidbody rb;
+    public GameEvent countdownStart;
+    public intAmount canGo;
+
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();
+        countdownStart.RegisterListener(this);
     }
 
 
     void Update()
     {
+
+        if (canGo.amount < 1)
+            return;
        
         Brake();
         
@@ -68,6 +75,9 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
+        if (canGo.amount < 1)
+            return;
+
         if (gameObject.tag == "Building")
         {
             Debug.Log("1");
@@ -77,14 +87,19 @@ public class Movement : MonoBehaviour
 
         }
     }
-   /* private void OnCollisionExit(Collision collision)
-    {
 
-        if (gameObject.tag == "Building")
-        {
-            isInBuilding = false;
-        }
-    }*/
+    public void Notify()
+    {
+        
+    }
+    /* private void OnCollisionExit(Collision collision)
+{
+
+    if (gameObject.tag == "Building")
+    {
+        isInBuilding = false;
+    }
+}*/
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (gameObject.tag == "Building")

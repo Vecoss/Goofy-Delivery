@@ -8,7 +8,8 @@ public class CountdownController : MonoBehaviour
 {
     public int countdownTime;
     public TextMeshProUGUI countdownDisplay;
-    public GameObject Car1;
+    public GameEvent countdownStart;
+    public intAmount canGo;
     private void Start()
     {
         StartCoroutine(CountdownToStart());
@@ -16,8 +17,9 @@ public class CountdownController : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
-        Car1.GetComponent<Movement>().enabled = false;
 
+        countdownStart.Fire();
+        canGo.amount = 0;
         while (countdownTime > 0)
         {
             countdownDisplay.text = countdownTime.ToString();
@@ -33,8 +35,8 @@ public class CountdownController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         countdownDisplay.gameObject.SetActive(false);
-
-        Car1.GetComponent<Movement>().enabled = true;
+        canGo.amount = 1;
+        countdownStart.Fire();
     }
 
 }

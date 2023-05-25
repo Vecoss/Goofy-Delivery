@@ -5,10 +5,12 @@ using UnityEngine;
 public class SelectedCar : MonoBehaviour
 {
     public GameObject[] cars;
-    public CarSelection car;
+    public intAmount car;
+    public intAmount package;
 
     private void Awake()
     {
-        Instantiate(cars[car.selectedCar], gameObject.transform.position, Quaternion.identity);
+        Instantiate(cars[car.amount], gameObject.transform.position, Quaternion.Euler(0, 90, 0));
+        package.amount = 0;
     }
 }
