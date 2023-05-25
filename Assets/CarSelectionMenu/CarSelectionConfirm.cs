@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarSelectionConfirm : MonoBehaviour
 {
     public GameEvent gameEventToRaiseOnInteraction;
-    public CarSelection CarSelection;
+    public intAmount CarSelection;
 
     public void Confirm()
     {

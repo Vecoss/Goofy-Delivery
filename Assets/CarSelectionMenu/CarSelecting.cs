@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CarSelecting : MonoBehaviour
 {
     [SerializeField] public List<GameObject> cars;
-    public CarSelection car;
+    public intAmount car;
 
     private void Awake()
     {
@@ -15,29 +15,29 @@ public class CarSelecting : MonoBehaviour
             obj.SetActive(false);
         }
 
-        cars[0].SetActive(true);
+        cars[car.amount].SetActive(true);
 
     }
     public void NextCar()
     {
         Debug.Log("Do przodu");
-        if (car.selectedCar >= cars.Count-1)
+        if (car.amount >= cars.Count-1)
         {
-            car.selectedCar = 0;
+            car.amount = 0;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[car.selectedCar].SetActive(true);
+            cars[car.amount].SetActive(true);
         }
         else
         {
-            car.selectedCar++;
+            car.amount++;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[car.selectedCar].SetActive(true);
+            cars[car.amount].SetActive(true);
 
         }
     }
@@ -45,23 +45,23 @@ public class CarSelecting : MonoBehaviour
     public void PreviousCar()
     {
         Debug.Log("Wstecz");
-        if (car.selectedCar <= 0)
+        if (car.amount <= 0)
         {
-            car.selectedCar = cars.Count-1;
+            car.amount = cars.Count-1;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[car.selectedCar].SetActive(true);
+            cars[car.amount].SetActive(true);
         }
         else
         {
-            car.selectedCar--;
+            car.amount--;
             foreach (GameObject obj in cars)
             {
                 obj.SetActive(false);
             }
-            cars[car.selectedCar].SetActive(true);
+            cars[car.amount].SetActive(true);
 
         }
     }

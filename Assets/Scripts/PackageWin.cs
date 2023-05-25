@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PackageWin : MonoBehaviour
 {
 
-    public ItemCollector packages;
+    public intAmount packages;
     public Movement movement;
     public TextMeshProUGUI win;
     private int winCondition = 10;
@@ -18,7 +18,7 @@ public class PackageWin : MonoBehaviour
     }
     void Update()
     {
-        if(packages.packages == winCondition)
+        if(packages.amount == winCondition)
         {
             win.enabled = true;
             movement.enabled = false;
