@@ -4859,6 +4859,8 @@ GameObject:
   - component: {fileID: 936600511124746370}
   - component: {fileID: 936600511124746493}
   - component: {fileID: 936600511124746492}
+  - component: {fileID: -7388486816565055429}
+  - component: {fileID: 208859617326327244}
   m_Layer: 0
   m_Name: Car2
   m_TagString: Untagged
@@ -4990,7 +4992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81fd34ebfd3ed345ad963f4c7e740bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 100
   maxSpeed: 10
   backSpeed: 3
   rotationSpeed: 50
@@ -5010,6 +5012,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a46b10da463f724cb0fdc2d4d33c366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7388486816565055429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936600511124746494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c236c71b3f253414aa3473428499f0c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packageEvent: {fileID: 0}
+  packageAmount: {fileID: 0}
+  actionCounter: 0
+  destinationPool: []
+  collision: {fileID: 0}
+  packagePool:
+  - {fileID: 936367263081223044, guid: 6164703b940e0e448a01daa2bc860f11, type: 3}
+  - {fileID: 9010961978300617506, guid: 41fb4c9441d42484bac570d5439edbbf, type: 3}
+  - {fileID: 709674956908472881, guid: 9331307a8d6d25e48853f1ce7f60e665, type: 3}
+  - {fileID: 2194135869280536913, guid: 13dd1f9134bbf864da8081faf7f876df, type: 3}
+  destinationPool: []
+  currentPackage: {fileID: 0}
+  packageCheck: 0
+  packagesText: {fileID: 0}
+--- !u!114 &208859617326327244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936600511124746494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1efecfd546fea4b8c87bd0f8758f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packageEvent: {fileID: 0}
+  packageAmount: {fileID: 0}
+  actionCounter: 0
+  destinationPool: []
+  collision: {fileID: 0}
 --- !u!1 &936600511265186164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,3 +5279,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   packageEvent: {fileID: 11400000, guid: 3de85192a6b860b48a353a58bc21e640, type: 2}
   packageAmount: {fileID: 11400000, guid: 7f3cff9ab398a5b4796cd4a3854cfc2d, type: 2}
+  actionCounter: 0
+  destinationPool: []
+  collision: {fileID: 0}
