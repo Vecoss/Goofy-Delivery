@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int packages = 0;
+    public GameEvent packageEvent;
+    public intAmount packageAmount;
 
-    [SerializeField] private TextMeshProUGUI packagesText;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Package"))
         {
+            packageAmount.amount++;
+            packageEvent.Fire();
             Destroy(collision.gameObject);
-            packages++;
-            packagesText.text = "Packages: " + packages;
         }
     }
 }
