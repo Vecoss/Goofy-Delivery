@@ -140,7 +140,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -5160,7 +5160,6 @@ MonoBehaviour:
   packageEvent: {fileID: 0}
   packageAmount: {fileID: 0}
   actionCounter: 0
-  destinationPool: []
   collision: {fileID: 0}
   packagePool:
   - {fileID: 936367263081223044, guid: 6164703b940e0e448a01daa2bc860f11, type: 3}
@@ -5186,7 +5185,6 @@ MonoBehaviour:
   packageEvent: {fileID: 0}
   packageAmount: {fileID: 0}
   actionCounter: 0
-  destinationPool: []
   collision: {fileID: 0}
 --- !u!1 &3793380991819985059
 GameObject:
@@ -5280,5 +5278,4 @@ MonoBehaviour:
   packageEvent: {fileID: 11400000, guid: 3de85192a6b860b48a353a58bc21e640, type: 2}
   packageAmount: {fileID: 11400000, guid: 7f3cff9ab398a5b4796cd4a3854cfc2d, type: 2}
   actionCounter: 0
-  destinationPool: []
   collision: {fileID: 0}
