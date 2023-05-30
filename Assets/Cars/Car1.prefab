@@ -5027,7 +5027,7 @@ GameObject:
   - component: {fileID: -660044615176590184}
   m_Layer: 0
   m_Name: Car1
-  m_TagString: Untagged
+  m_TagString: Cars
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5203,7 +5203,10 @@ MonoBehaviour:
   - {fileID: 7394759934359666317, guid: 889512aef99f0434aa9eb9e3ad13abda, type: 3}
   - {fileID: 7664135912001847600, guid: 7fcd2fe5d18dbce4cbead98ae724c105, type: 3}
   currentPackage: {fileID: 0}
+  currentCarDistance: {fileID: 1773768763812383098}
+  positionTool: {fileID: 0}
   packageCheck: 0
+  meshCheck: 0
   packagesText: {fileID: 0}
 --- !u!114 &-660044615176590184
 MonoBehaviour:
