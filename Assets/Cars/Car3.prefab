@@ -4996,7 +4996,7 @@ GameObject:
   - component: {fileID: 4110179276047860080}
   m_Layer: 0
   m_Name: Car3
-  m_TagString: Untagged
+  m_TagString: Cars
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5168,7 +5168,10 @@ MonoBehaviour:
   - {fileID: 2194135869280536913, guid: 13dd1f9134bbf864da8081faf7f876df, type: 3}
   destinationPool: []
   currentPackage: {fileID: 0}
+  currentCarDistance: {fileID: 3793380990954047464}
+  positionTool: {fileID: 0}
   packageCheck: 0
+  meshCheck: 0
   packagesText: {fileID: 0}
 --- !u!114 &4110179276047860080
 MonoBehaviour:
