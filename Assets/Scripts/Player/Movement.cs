@@ -17,6 +17,11 @@ public class Movement : MonoBehaviour, IGameEventListener
     public GameEvent countdownStart;
     public intAmount canGo;
 
+    public AudioSource carOff;
+    public AudioSource carOn;
+    public AudioSource carDriving;
+    private int soundCheck = 0;
+
 
     void Start()
     {
@@ -30,9 +35,38 @@ public class Movement : MonoBehaviour, IGameEventListener
 
         if (canGo.amount < 1)
             return;
+        
        
         Brake();
         
+        if (Input.GetKeyDown(KeyCode.W) && soundCheck<=0)
+        {
+            carOn.Play();
+             carDriving.Play();
+            soundCheck = -1;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.S))
+        {
+            carDriving.Stop();
+            carOff.Play();
+            soundCheck = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) && soundCheck>=0)
+        { 
+            carOn.Play();
+            carDriving.Play();
+            soundCheck = 1;
+        }
+
+        //if (Input.GetKeyUp(KeyCode.S))
+        //{ carDriving.Stop();
+        //  carOff.Play();
+        //    soundCheck = 0;
+        //}
+        
+
         if (Input.GetKey(KeyCode.W) && !isInBuilding && rb.velocity.magnitude <= maxSpeed)
         {
             rb.AddForce(transform.forward * speed, ForceMode.Acceleration);
