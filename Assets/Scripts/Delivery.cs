@@ -8,7 +8,7 @@ public class Delivery : ItemCollector
 {
     // Start is called before the first frame update
     static float checker = 0;
-    public TMP_Text pickupdeliverthepackage;
+    public TextMeshProUGUI pickupdeliverthepackage;
   // public TMP_Text Meters;
     public GameObject[] packagePool;
    // private Renderer PackageMeshRender;
@@ -19,8 +19,11 @@ public class Delivery : ItemCollector
   //  private int packages = 0;
     public float packageCheck = 0;
     public float meshCheck = 0;
+    public AudioSource collect;
     int index;
     [SerializeField] private TextMeshProUGUI packagesText;
+    public GameEvent packageDeliveredEvent;
+    public GameEvent packagePickedUpEvent;
     // Pod��cz to do wszystkich aut i zr�b du�o package'y
 
 
@@ -63,7 +66,7 @@ public class Delivery : ItemCollector
             //packageCheck = 0;
 
             checker++;
-
+            collect.Play();
             do
             {
             
@@ -88,12 +91,12 @@ public class Delivery : ItemCollector
             print(currentPackage.name);
             packageCheck = 0;
             if (checker%2==1)
-            {pickupdeliverthepackage.text = "Deliver the Package";
-            Debug.Log("jeden");
+            {
+                packagePickedUpEvent.Fire();
             }
             else if (checker%2==0)
-            {pickupdeliverthepackage.text = "Pick up the Package";
-            Debug.Log("dwa");
+            {
+                packageDeliveredEvent.Fire();
             }
 
         }

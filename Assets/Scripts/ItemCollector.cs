@@ -20,7 +20,7 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Package"))
         {
 
-            packageEvent.Fire();
+            //packageEvent.Fire();
             collision.gameObject.SetActive(false);
            // Destroy(collision.gameObject);
 

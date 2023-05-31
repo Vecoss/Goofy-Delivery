@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3930416559010122824}
   - component: {fileID: 3930416559010122826}
   - component: {fileID: 3930416559010122825}
+  - component: {fileID: 940364853}
+  - component: {fileID: 940364852}
   m_Layer: 0
   m_Name: Pick up the Package
   m_TagString: Untagged
@@ -135,3 +137,59 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &940364853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930416559010122839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEventToListen: {fileID: 11400000, guid: ec075e1e0bcfed34c94ed9f637ce7083, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3930416559010122825}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pick up the next Package
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &940364852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930416559010122839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEventToListen: {fileID: 11400000, guid: afa3025b2f9b2a946b4ffca8d95d07e5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3930416559010122825}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Deliver the Package
+          m_BoolArgument: 0
+        m_CallState: 2
