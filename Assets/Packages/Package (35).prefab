@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7597591997573741590}
   - component: {fileID: 7597591997573741591}
   - component: {fileID: 7317985162140675985}
+  - component: {fileID: 7317985162140676013}
   - component: {fileID: 7317985162140675984}
   - component: {fileID: 7317985162140676015}
   - component: {fileID: 7317985162140676014}
-  - component: {fileID: 7317985162140676013}
   m_Layer: 0
   m_Name: Package (35)
   m_TagString: Package
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 64af4ca99b0f3ad4ea7a0f8ea3b24b2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,6 +116,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   pickupdeliverthepackage: {fileID: 0}
+--- !u!114 &7317985162140676013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7597591997573741584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 0
+  onEnableBehaviour: 0
+  onDisableBehaviour: 0
 --- !u!114 &7317985162140675984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,18 +446,3 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
---- !u!114 &7317985162140676013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7597591997573741584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preset: 0
-  onEnableBehaviour: 0
-  onDisableBehaviour: 0
