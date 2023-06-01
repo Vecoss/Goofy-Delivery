@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e033c15390e362489d22e2b54743ef7, type: 3}
   m_Name: packagesPickedUp
   m_EditorClassIdentifier: 
-  selectedCar: 0
+  amount: 1
