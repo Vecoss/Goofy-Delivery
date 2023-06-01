@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour, IGameEventListener
     public AudioSource carOn;
     public AudioSource carDriving;
     private int soundCheck = 0;
+    private bool WPressCheck = false;
+    private bool SPressCheck = false;
 
 
     void Start()
@@ -28,10 +30,52 @@ public class Movement : MonoBehaviour, IGameEventListener
         rb = GetComponent<Rigidbody>();
         countdownStart.RegisterListener(this);
     }
+    void sounds()
+    {
+        if (WPressCheck == false && SPressCheck == false && soundCheck!=0)
+        {
+            carDriving.Stop();
+            carOff.Play();
+            soundCheck = 0;
+        }
+        
 
+        if (Input.GetKeyDown(KeyCode.W) && soundCheck<=0)
+        {
+            carOn.Play();
+             carDriving.Play();
+            soundCheck = -1;
+        }
+        if (Input.GetKeyDown(KeyCode.S) && soundCheck>=0)
+        { 
+            carOn.Play();
+            carDriving.Play();
+            soundCheck = 1;
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+        SPressCheck = true;
+        Debug.Log("S");
+        }                 
+
+        if (Input.GetKey(KeyCode.W))
+        {
+        WPressCheck = true;
+        Debug.Log("W");
+        }                   
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            SPressCheck = false;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            WPressCheck = false;
+        }
+    }
 
     void Update()
-    {
+    {   sounds();
 
         if (canGo.amount < 1)
             return;
@@ -39,26 +83,31 @@ public class Movement : MonoBehaviour, IGameEventListener
        
         Brake();
         
-        if (Input.GetKeyDown(KeyCode.W) && soundCheck<=0)
-        {
-            carOn.Play();
-             carDriving.Play();
-            soundCheck = -1;
-        }
+        // if (Input.GetKeyDown(KeyCode.W) && soundCheck<=0)
+        // {
+        //     carOn.Play();
+        //      carDriving.Play();
+        //     soundCheck = -1;
+        // }
 
-        if (Input.GetKeyUp(KeyCode.W) && Input.GetKeyUp(KeyCode.S))
-        {
-            carDriving.Stop();
-            carOff.Play();
-            soundCheck = 0;
-        }
+        // if (Input.GetKeyUp(KeyCode.W)) //&& Input.GetKeyUp(KeyCode.S))
+        // {
+        //     carDriving.Stop();
+        //     carOff.Play();
+        //     soundCheck = 0;
+        // }
 
-        if (Input.GetKeyDown(KeyCode.S) && soundCheck>=0)
-        { 
-            carOn.Play();
-            carDriving.Play();
-            soundCheck = 1;
-        }
+        // if (Input.GetKeyDown(KeyCode.S) && soundCheck>=0)
+        // { 
+        //     carOn.Play();
+        //     carDriving.Play();
+        //     soundCheck = 1;
+        // }
+        // if (Input.GetKeyUp(KeyCode.S) && soundCheck>=0)
+        // {
+        //     carDriving.Stop();
+        //     carOff.Play();
+        // }
 
         //if (Input.GetKeyUp(KeyCode.S))
         //{ carDriving.Stop();
