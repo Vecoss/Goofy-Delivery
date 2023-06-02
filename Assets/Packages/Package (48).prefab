@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 7567263902938744242}
   - component: {fileID: 7567263902938744243}
   - component: {fileID: 7348457861322511933}
+  - component: {fileID: 7348457861322511929}
   - component: {fileID: 7348457861322511932}
   - component: {fileID: 7348457861322511935}
   - component: {fileID: 7348457861322511934}
-  - component: {fileID: 7348457861322511929}
   m_Layer: 0
   m_Name: Package (48)
   m_TagString: Package
@@ -116,6 +116,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   pickupdeliverthepackage: {fileID: 0}
+--- !u!114 &7348457861322511929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567263902938744244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preset: 0
+  onEnableBehaviour: 0
+  onDisableBehaviour: 0
 --- !u!114 &7348457861322511932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,18 +446,3 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
---- !u!114 &7348457861322511929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7567263902938744244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 40306178, guid: aa0b1eebb5db27a419fa4564bbe5c9c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  preset: 0
-  onEnableBehaviour: 0
-  onDisableBehaviour: 0
