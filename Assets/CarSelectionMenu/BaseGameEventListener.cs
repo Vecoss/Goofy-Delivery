@@ -10,7 +10,7 @@ public class BaseGameEventListener : MonoBehaviour, IGameEventListener
 
     private void OnEnable()
     {
-        gameEventToListen.RegisterListener(this);
+      //  gameEventToListen.RegisterListener(this);
     }
 
     public void Notify()
@@ -20,6 +20,6 @@ public class BaseGameEventListener : MonoBehaviour, IGameEventListener
 
     private void OnDisable()
     {
-        gameEventToListen.UnregisterListener(this);
+      //  gameEventToListen.UnregisterListener(this);
     }
 }

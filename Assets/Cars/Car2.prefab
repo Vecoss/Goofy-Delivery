@@ -4866,7 +4866,6 @@ GameObject:
   - component: {fileID: -4808991953348266868}
   - component: {fileID: 7315780848700170316}
   - component: {fileID: 486100533196307730}
-  - component: {fileID: -8002826993042757327}
   m_Layer: 0
   m_Name: Car2
   m_TagString: Cars
@@ -5616,19 +5615,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-8002826993042757327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936600511124746494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEventToListen: {fileID: 11400000, guid: dcf8dc9ba06d4624080ab373c9f1aecb, type: 2}
 --- !u!1 &936600511265186164
 GameObject:
   m_ObjectHideFlags: 0
