@@ -10,12 +10,12 @@ public class PackageWin : MonoBehaviour
     public intAmount packages;
     public Movement movement;
     public TextMeshProUGUI win;
-    private int winCondition = 10;
+    private int winCondition = 1;
 
     private void Awake()
     {
         win.enabled = false;
-    }
+    } 
     void Update()
     {
         if(packages.amount == winCondition)
