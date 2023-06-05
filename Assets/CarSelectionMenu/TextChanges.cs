@@ -6,12 +6,14 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BaseGameEventListener : MonoBehaviour, IGameEventListener
+public class WinningListener : MonoBehaviour, IGameEventListener
 {
     //public intAmount packages;
    // public Movement movement;
     private int winCondition = 0;
     public GameEvent gameEventToListen;
+    public GameEvent packageDeliveredEvent;
+    public GameEvent packagePickedUpEvent;
 
     private void OnEnable() 
     {
@@ -25,8 +27,11 @@ public class BaseGameEventListener : MonoBehaviour, IGameEventListener
         if (winCondition==2) 
         {
         Debug.Log("Wygrana");
-        SceneManager.LoadScene("LoseScene");
+        SceneManager.LoadScene("VictoryScene");
          Destroy(gameObject);
+         if (winCondition%2==1)
+         {packagePickedUpEvent.Fire();}
+         else {packageDeliveredEvent.Fire();}
        // win.enabled = true; 
      //   movement.enabled = false;
         }

@@ -16,16 +16,13 @@ public class TestingGE : MonoBehaviour, IGameEventListener
     public GameObject[] GPSPool;
     public GameObject currentPackage;
     public GameObject currentGPS;
-    //public Transform currentCarDistance;
     public float packageCheck = 0;
     public float meshCheck = 0;
-    public AudioSource collect;
+    //public AudioSource collect;
     int index;
     int index2;
-    [SerializeField] private Material colorSwap;
     [SerializeField] private TextMeshProUGUI packagesText;
-    public GameEvent packageDeliveredEvent;
-    public GameEvent packagePickedUpEvent;
+
    // private UnityEvent response;
     public int xd = 0;
 
@@ -67,15 +64,12 @@ public void OnDisable()
 public void Notify()
     {
         xd = 3;
-
-Color colorr = colorSwap.color;
-            colorSwap.color = colorr;
-            checker++;
-
+        checker++;
             
             
             if (checker%2==1)
             {
+                
                 do
             {
                 index = Random.Range(0, destinationPool.Length);
@@ -92,15 +86,17 @@ Color colorr = colorSwap.color;
             index2 = index;
             print(currentPackage.name);
             packageCheck = 0;
+ 
 
-                packagePickedUpEvent.Fire();
-                colorr.a = 0.5f;
-                colorSwap.color = colorr;
+                
+                
             }
 
 
             else if (checker%2==0)
-            {do
+            {
+                
+                do
             {
             
                 index = Random.Range(0, packagePool.Length);
@@ -117,11 +113,9 @@ Color colorr = colorSwap.color;
             index2 = index;
             print(currentPackage.name);
             packageCheck = 0;
+  
 
-
-                packageDeliveredEvent.Fire();
-                colorr.a = 1f;
-                colorSwap.color = colorr;
+                
             }
 
     }
