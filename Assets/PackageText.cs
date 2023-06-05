@@ -12,7 +12,7 @@ public class PackageText : MonoBehaviour, IGameEventListener
 
     public void Notify()
     {
-        amount.text = "Packages: " + packageAmount.amount;
+        amount.text = "Packages Delivered: " + packageAmount.amount + "/3";
     }
 
     private void Start()

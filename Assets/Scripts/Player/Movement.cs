@@ -56,13 +56,13 @@ public class Movement : MonoBehaviour, IGameEventListener
         if (Input.GetKey(KeyCode.S))
         {
         SPressCheck = true;
-        Debug.Log("S");
+        //Debug.Log("S");
         }                 
 
         if (Input.GetKey(KeyCode.W))
         {
         WPressCheck = true;
-        Debug.Log("W");
+        //Debug.Log("W");
         }                   
         if (Input.GetKeyUp(KeyCode.S))
         {
@@ -82,38 +82,6 @@ public class Movement : MonoBehaviour, IGameEventListener
         
        
         Brake();
-        
-        // if (Input.GetKeyDown(KeyCode.W) && soundCheck<=0)
-        // {
-        //     carOn.Play();
-        //      carDriving.Play();
-        //     soundCheck = -1;
-        // }
-
-        // if (Input.GetKeyUp(KeyCode.W)) //&& Input.GetKeyUp(KeyCode.S))
-        // {
-        //     carDriving.Stop();
-        //     carOff.Play();
-        //     soundCheck = 0;
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.S) && soundCheck>=0)
-        // { 
-        //     carOn.Play();
-        //     carDriving.Play();
-        //     soundCheck = 1;
-        // }
-        // if (Input.GetKeyUp(KeyCode.S) && soundCheck>=0)
-        // {
-        //     carDriving.Stop();
-        //     carOff.Play();
-        // }
-
-        //if (Input.GetKeyUp(KeyCode.S))
-        //{ carDriving.Stop();
-        //  carOff.Play();
-        //    soundCheck = 0;
-        //}
         
 
         if (Input.GetKey(KeyCode.W) && !isInBuilding && rb.velocity.magnitude <= maxSpeed)
@@ -175,32 +143,8 @@ public class Movement : MonoBehaviour, IGameEventListener
     {
         
     }
-    /* private void OnCollisionExit(Collision collision)
-{
 
-    if (gameObject.tag == "Building")
-    {
-        isInBuilding = false;
-    }
-}*/
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (gameObject.tag == "Building")
-    //    {
-    //        Debug.Log("1");
-    //        Rigidbody rb = GetComponent<Rigidbody>();
-    //        rb.Sleep();
-    //        isInBuilding = true;
 
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (gameObject.tag == "Building")
-    //    {
-    //        isInBuilding = false;
-    //    }
-    //}
 
 }
 
