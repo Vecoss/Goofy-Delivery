@@ -28,7 +28,7 @@ public class Delivery : MonoBehaviour
         if ((collision.gameObject.CompareTag("Package"))&&(soundChecker%2==0))
             {deliver.Play();}
         if ((collision.gameObject.CompareTag("Package"))&&(soundChecker%6==0))
-            {SceneManager.LoadScene("LoseScene");
+            {SceneManager.LoadScene("VictoryScene");
              Destroy(gameObject);}
     }
 

@@ -10,7 +10,7 @@ public class PackageWin : MonoBehaviour
     public intAmount packages;
     public Movement movement;
     public TextMeshProUGUI win;
-    private int winCondition = 1;
+    private int winCondition = 6;
 
     private void Awake()
     {
