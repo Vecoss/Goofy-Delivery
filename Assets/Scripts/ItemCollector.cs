@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// This code is no longer used, it's how the previous package code looked
 
 public class ItemCollector : MonoBehaviour
 {
@@ -20,9 +20,7 @@ public class ItemCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("Package"))
         {
 
-            //packageEvent.Fire();
             collision.gameObject.SetActive(false);
-           // Destroy(collision.gameObject);
 
             if ((actionCounter % 2) == 0)
             {

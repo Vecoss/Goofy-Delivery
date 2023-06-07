@@ -5,7 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-public class TestingGE : MonoBehaviour, IGameEventListener
+// For navigation purposes - This code was placed in Canvas -> Pick up/Deliver the Package
+
+public class PackageScript : MonoBehaviour, IGameEventListener
 {
     [SerializeField] 
     private GameEvent gameEventToListen;
@@ -18,12 +20,11 @@ public class TestingGE : MonoBehaviour, IGameEventListener
     public GameObject currentGPS;
     public float packageCheck = 0;
     public float meshCheck = 0;
-    //public AudioSource collect;
     int index;
     int index2;
     [SerializeField] private TextMeshProUGUI packagesText;
 
-   // private UnityEvent response;
+
     public int xd = 0;
 
 void Start()  
@@ -124,8 +125,6 @@ public void Notify()
     while (Input.GetKeyDown(KeyCode.E))
     {currentGPS.SetActive(true);}
 
- //   if (Input.GetKeyUp(KeyCode.E))
-  //  {GPSPool[index].SetActive(false);}
 }
 
 }

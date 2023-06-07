@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Here we count delivered Packages :)
+
 public class PackageText : MonoBehaviour, IGameEventListener
 {
 
     public GameEvent packageEvent;
-    public intAmount packageAmount;
+    int packageA=0;
     public TextMeshProUGUI amount;
 
     public void Notify()
     {
-        amount.text = "Packages Delivered: " + packageAmount.amount + "/3";
+        packageA++;
+        amount.text = "Packages Delivered: " + (packageA/2) + "/3";
     }
+    
 
     private void Start()
     {

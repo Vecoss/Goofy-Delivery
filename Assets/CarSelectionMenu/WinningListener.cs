@@ -22,10 +22,10 @@ public class TextChanges : MonoBehaviour, IGameEventListener
     {
         winCondition++;
         Debug.Log("+1");
-        if (winCondition==2) 
+        if (winCondition>=6) 
         {
         Debug.Log("Wygrana");
-        SceneManager.LoadScene("LoseScene");
+        SceneManager.LoadScene("VictoryScene");
          Destroy(gameObject);
        // win.enabled = true; 
      //   movement.enabled = false;
