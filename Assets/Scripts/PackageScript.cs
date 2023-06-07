@@ -5,9 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
-// For navigation purposes - This code was placed in Canvas -> Pick up/Deliver the Package
+// Made some comments to help you easily navigate through code ~ Kuba
 
-public class PackageScript : MonoBehaviour, IGameEventListener
+public class TestingGE : MonoBehaviour, IGameEventListener
 {
     [SerializeField] 
     private GameEvent gameEventToListen;
@@ -29,7 +29,9 @@ public class PackageScript : MonoBehaviour, IGameEventListener
 
 void Start()  
     {
-        
+        // Here we desactivate all components of a Package -> a Package object, a Destination object and a GPS object.
+        // We also roll a random index. A package and a GPS with that index in the array will be set active for the player to find.
+
         index = Random.Range(0, packagePool.Length);
         index2 = index;
         currentPackage = packagePool[index];
@@ -47,11 +49,13 @@ void Start()
         {
             GPSPool[i].SetActive(false);
         }
+
         currentGPS = GPSPool[index];
         currentPackage.SetActive(true);
         currentGPS.SetActive(true);
     }
 
+    // IGameEventListener's OnEnable and OnDisable. Nothing crazy.
 public void OnEnable()
     {
         if (gameEventToListen != null) gameEventToListen.RegisterListener(this);
@@ -62,6 +66,8 @@ public void OnDisable()
         gameEventToListen.UnregisterListener(this);
     }
 
+    // Notify triggers when anyPackage Event is triggered, so when you collide with either a Package or a Destination.
+    // Every odd 'checker' value makes your target a Package to pick up. Every even 'checker' value makes it a Destination to deliver the package.
 public void Notify()
     {
         xd = 3;
@@ -86,11 +92,7 @@ public void Notify()
             currentGPS.SetActive(true);
             index2 = index;
             print(currentPackage.name);
-            packageCheck = 0;
- 
-
-                
-                
+            packageCheck = 0; 
             }
 
 
@@ -113,18 +115,10 @@ public void Notify()
             currentGPS.SetActive(true);
             index2 = index;
             print(currentPackage.name);
-            packageCheck = 0;
-  
-
-                
+            packageCheck = 0;  
             }
 
-    }
-    void update()
-{
-    while (Input.GetKeyDown(KeyCode.E))
-    {currentGPS.SetActive(true);}
 
-}
+    }
 
 }

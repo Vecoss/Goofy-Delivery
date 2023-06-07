@@ -16,8 +16,6 @@ GameObject:
   - component: {fileID: 9163976362293699877}
   - component: {fileID: 6814653476049957802}
   - component: {fileID: -6977362841242100181}
-  - component: {fileID: 4990635446469899521}
-  - component: {fileID: -3493107685895438522}
   m_Layer: 0
   m_Name: Package
   m_TagString: Package
@@ -433,61 +431,3 @@ MonoBehaviour:
   optionalRotationMode: 0
   optionalScrambleMode: 0
   optionalString: 
---- !u!114 &4990635446469899521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936367263081223044}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEventToListen: {fileID: 11400000, guid: afa3025b2f9b2a946b4ffca8d95d07e5, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2100000, guid: 64af4ca99b0f3ad4ea7a0f8ea3b24b2f, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.Material, UnityEngine
-        m_MethodName: CopyPropertiesFromMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 1492cf2f4d438a8408d964566281749b,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-3493107685895438522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936367263081223044}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cc39301ab90a5e439ebcaa7212fb479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEventToListen: {fileID: 11400000, guid: ec075e1e0bcfed34c94ed9f637ce7083, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2100000, guid: 64af4ca99b0f3ad4ea7a0f8ea3b24b2f, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.Material, UnityEngine
-        m_MethodName: CopyPropertiesFromMaterial
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 86aa75a1eca3372429f24f4599208098,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

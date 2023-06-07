@@ -5045,6 +5045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anyPackageEvent: {fileID: 11400000, guid: dcf8dc9ba06d4624080ab373c9f1aecb, type: 2}
+  soundAndWinChecker: 0
   collect: {fileID: -2810975450165260842}
   deliver: {fileID: 7315780848700170316}
 --- !u!82 &-2810975450165260842

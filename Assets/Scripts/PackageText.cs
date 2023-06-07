@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// Here we count delivered Packages :)
+
 public class PackageText : MonoBehaviour, IGameEventListener
 {
 
     public GameEvent packageEvent;
-    //public intAmount packageAmount;
     int packageA=0;
     public TextMeshProUGUI amount;
 

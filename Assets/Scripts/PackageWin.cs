@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+// This code is no longer used, it how win condition looked
+
 public class PackageWin : MonoBehaviour
 {
 

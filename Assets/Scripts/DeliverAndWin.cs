@@ -5,11 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Delivery : MonoBehaviour
+public class DeliverAndWin : MonoBehaviour
 {
+    // this one ended up triggering sounds and win con
 
     public GameEvent anyPackageEvent;
-    int soundChecker = 0;
+    
+int soundAndWinChecker = 0;
     public AudioSource collect;
     public AudioSource deliver;
 
@@ -19,15 +21,15 @@ public class Delivery : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Package"))
         {
-            soundChecker++;
+            soundAndWinChecker++;
             collect.Play();
             anyPackageEvent.Fire();
 
             
         }
-        if ((collision.gameObject.CompareTag("Package"))&&(soundChecker%2==0))
+        if ((collision.gameObject.CompareTag("Package"))&&(soundAndWinChecker%2==0))
             {deliver.Play();}
-        if ((collision.gameObject.CompareTag("Package"))&&(soundChecker%6==0))
+        if ((collision.gameObject.CompareTag("Package"))&&(soundAndWinChecker%6==0))
             {SceneManager.LoadScene("VictoryScene");
              Destroy(gameObject);}
     }
